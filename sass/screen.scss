@@ -58,6 +58,16 @@ img {
 	}
 }
 
+button {
+	border: none;
+	font-weight: bolder; 
+	padding: .5em 1em;
+		&.centered {
+			display: block;
+			margin: 0 auto;
+		}
+}
+
 .logo {
 	background: $general;
 	font-size: 2em;
@@ -139,4 +149,17 @@ main {
 }
 
 form {
+	width: 23.344em;
+		label {
+			font-size: 1.2em;
+			display: block;
+			width: 100%;
+		}
+		h2 {
+			font-size: 1.3em;
+		}
+		button {
+			background: $traslucid-cyan;
+			color: $aqua;
+		}
 }
