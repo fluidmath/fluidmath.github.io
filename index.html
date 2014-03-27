@@ -1,1 +1,60 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><header><div class="wrapp cf"></div></header><div class="wrapp content"><h3>Hola mundo!</h3></div><footer><div class="wrapp cf"></div></footer></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WebToolz</title>
+    <link rel="stylesheet" href="stylesheets/screen.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrapp cf">
+        <h1 class="logo muli">Web<span>Toolz</span></h1>
+      </div>
+    </header>
+    <div class="wrapp content cf">
+      <main>
+        <div data-math>
+          <h1>Math conversions</h1>
+          <form>
+            <div>
+              <label for="pixel-base">Pixel base size</label>
+              <input id="pixel-base" placeholder="16" value="16" class="px">
+            </div>
+            <div>
+              <h2>Convertion
+                <div>
+                  <label>Px To Em</label>
+                  <input id="pixel-value" placeholder="24" class="px">
+                </div>
+                <div>
+                  <label>Em To Px</label>
+                  <input id="em-value" placeholder="1.5" class="px">
+                </div>
+              </h2>
+            </div>
+            <div>
+              <button id="convert">Convert!</button>
+            </div>
+            <div>
+              <h2>Result</h2>
+              <input id="convertion-result" placeholder="Result">
+            </div>
+          </form>
+        </div>
+      </main>
+      <aside>
+        <h4 class="aside centered muli">select your tool</h4>
+        <ul>
+          <li data-math>Math</li>
+          <li data-sprite-cow>Sprite Cow</li>
+          <li data-sprite-gen>Sprite Gen</li>
+          <li data-hex>Hex to RGBA</li>
+        </ul>
+      </aside>
+    </div>
+    <footer>
+      <div class="wrapp cf">
+      </div>
+    </footer>
+  </body>
+</html>

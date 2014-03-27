@@ -1,2 +1,142 @@
 @import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Muli);
 
+$font : whitesmoke;
+$main-font : #252525;
+$muli : 'Muli', sans-serif;
+$cyan : #29c7c8;
+$aqua : #269793;
+$traslucid-cyan : rgba(41, 199, 200, 0.8);
+$general : rgba(45, 46, 51, 0.5);
+$traslucid : rgba(33, 34, 37, 0.65);
+
+
+* {
+	&:focus {
+		outline: none;
+	}
+}
+
+body {
+	font-size: 100%;
+	width: 100%;
+	margin: 0 auto;
+	font-family: 'Arial', 'sans-serif';
+	color: $font;
+	background: url(../images/patterns/diagmonds.png) repeat;
+	padding: 2em 0;
+}
+
+.wrapp {
+	max-width: 60em;
+	margin: 0 auto;
+}
+
+.centered {
+	text-align: center;
+}
+
+.muli {
+	font-family: $muli;
+}
+
+.cf {
+	&::after, &::before {
+		display: table;
+		content: ' ';
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+img {
+	&.centered {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.logo {
+	background: $general;
+	font-size: 2em;
+	padding: .5em 1em;
+	display: inline-block;
+		span {
+			color: $cyan;
+		}
+}
+
+header {
+	.wrapp {
+		background: $traslucid;
+	}
+}
+
+.aside {
+	display: inline-block;
+	width: 9.313em;
+	background: $traslucid;
+	padding: 1em 2em;
+}
+
+aside {
+	width: 13.313em;
+	float: left;
+		li {
+			box-sizing: border-box;
+			border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+			border-right: 5px solid transparent;
+			background: $traslucid;
+			display: block;
+			width: 100%;
+			font-family: $muli;
+			font-size: 1.5em;
+			text-align: center;
+			padding: 2em 0;
+			padding: 1em 1.5em;
+
+				&:hover {
+					cursor: pointer;
+					border-right: 5px solid $aqua;
+				}
+		}
+}
+
+h4 {
+	&.aside{
+		font-size: 1em;
+		background: $traslucid-cyan;
+		padding: .5em 2em;
+	}
+}
+
+main {
+	box-sizing: border-box;
+	width: 46.688em;
+	float: left;
+	background: whitesmoke;
+	color: $main-font;
+	padding: 2em;
+		h1 {
+			font-weight: bold;
+			font-size: 2em;
+			padding: 0 0 0 1em;
+			position: relative;
+			margin: 0 0 2em 0;
+			 &::before {
+				content: ' ';
+				position: absolute;
+				background: $cyan;
+				width: .5em;
+				height: .5em;
+				left: 0;
+				top: .25em;
+				border-radius: 50%;
+			 }
+		}
+}
+
+form {
+}

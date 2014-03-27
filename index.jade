@@ -1,4 +1,40 @@
 extend jade - templates/layout.jade
 
+block head
+	title WebToolz
+	link(rel="stylesheet" href="stylesheets/screen.css" )
+
+block header
+	h1.logo.muli Web
+			span Toolz
+
 block content
-	h3 Hola mundo!
+	main
+		div(data-math)
+			h1 Math conversions
+			form
+				div
+					label(for="pixel-base") Pixel base size
+					input.px(id="pixel-base" placeholder="16" value="16")
+				div
+					h2 Convertion
+						div
+							label Px To Em
+							input.px(id="pixel-value" placeholder="24")
+						div
+							label Em To Px
+							input.px(id="em-value" placeholder="1.5")
+				div
+					button(id="convert") Convert!
+				div
+					h2 Result
+					input(id="convertion-result" placeholder="Result")
+
+
+	aside 
+		h4.aside.centered.muli select your tool
+		ul
+			li(data-math) Math
+			li(data-sprite-cow) Sprite Cow
+			li(data-sprite-gen) Sprite Gen
+			li(data-hex) Hex to RGBA
