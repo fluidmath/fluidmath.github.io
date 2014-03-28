@@ -181,9 +181,6 @@ form {
 				width: 5.25em;
 				float: left;
 			}
-			input {
-				width: 100%;
-			}
 			:last-child {
 				float: right;
 			}
@@ -215,14 +212,29 @@ form {
 				height: 4.421em;
 				text-align: center;
 				border-radius: 50%;
-				color: inherit;
+				color: $main-font;
 			}
 		}
-		#convertion-result {
+		input.result {
 			@include box-shadow( none );
 			background: transparent;
+			width: 100%;
 		}
 		.children-size {
 			margin: 2em 0;
+		}
+		.px {
+			margin: 0;
+			position:relative;
+				&::after {
+					content: 'px';
+					color: lighten($traslucid, 50%);
+					position: absolute;
+					right: 1.7em;
+					top: 0;
+					bottom: 0;
+					margin-top: 1.5em;
+					font-size: 1.2em;
+				}
 		}
 }
