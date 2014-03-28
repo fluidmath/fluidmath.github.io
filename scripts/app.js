@@ -24,6 +24,7 @@
 			result = pxc.get('.result');
 
 			base_input.addEvent('focus', clear );
+			base_input.addEvent('keyup', changeBase );
 			not_base_inputs.addEvent('focus', clearAll );
 			not_base_inputs.addEvent('keyup', changeVal );
 
@@ -43,9 +44,9 @@
 
 			}
 
-			function changeVal(){
-				value = this.value;
-			}
+			function changeVal(){ value = Number(this.value); }
+
+			function changeBase(){ base = Number(this.value); }
 
 			var convertion = {
 				'px-to-em' : function(){
