@@ -1,4 +1,6 @@
 @import "compass/reset";
+@import "compass/css3";
+
 @import url(http://fonts.googleapis.com/css?family=Muli);
 
 $font : whitesmoke;
@@ -15,6 +17,7 @@ $traslucid : rgba(33, 34, 37, 0.65);
 	&:focus {
 		outline: none;
 	}
+	box-sizing: border-box;
 }
 
 body {
@@ -62,10 +65,23 @@ button {
 	border: none;
 	font-weight: bolder; 
 	padding: .5em 1em;
+	transition: opacity linear .3s;
 		&.centered {
 			display: block;
 			margin: 0 auto;
 		}
+		&:hover {
+			cursor: hand;
+			cursor: pointer;
+			opacity: 0.85;
+		}
+}
+
+input {
+	&.centered {
+		display: block;
+		margin: 0 auto;
+	}	
 }
 
 .logo {
@@ -86,7 +102,7 @@ header {
 
 .aside {
 	display: inline-block;
-	width: 9.313em;
+	width: 13.313em;
 	background: $traslucid;
 	padding: 1em 2em;
 }
@@ -95,7 +111,7 @@ aside {
 	width: 13.313em;
 	float: left;
 		li {
-			box-sizing: border-box;
+			
 			border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
 			border-right: 5px solid transparent;
 			background: $traslucid;
@@ -111,6 +127,9 @@ aside {
 					cursor: pointer;
 					border-right: 5px solid $aqua;
 				}
+				&:last-child {
+					border-bottom: none;
+				}
 		}
 }
 
@@ -123,7 +142,7 @@ h4 {
 }
 
 main {
-	box-sizing: border-box;
+	
 	width: 46.688em;
 	float: left;
 	background: whitesmoke;
@@ -149,11 +168,31 @@ main {
 }
 
 form {
-	width: 23.344em;
+	padding: 0 4em;
+	width: 21em;
+	float: left;
+	border-left: 2px dashed $traslucid;
+	color: $traslucid;
+		div {
+			margin: 1em 0;
+		}
+		.cf {
+			div {
+				width: 5.25em;
+				float: left;
+			}
+			input {
+				width: 100%;
+			}
+			:last-child {
+				float: right;
+			}
+		}
 		label {
 			font-size: 1.2em;
 			display: block;
 			width: 100%;
+			margin-bottom: .8em;
 		}
 		h2 {
 			font-size: 1.3em;
@@ -161,5 +200,29 @@ form {
 		button {
 			background: $traslucid-cyan;
 			color: $aqua;
+			font-size: 1.1em;
+			border-radius: 25px;
+		}
+		&:first-of-type {
+			border: none;
+		}
+		&.fluid-math {
+			input {
+				@include box-shadow( 0px 0px 5px 0px rgba(160, 160, 160, 0.5) );
+				border: none;
+				font-size: 1.2em;
+				width: 4.421em;
+				height: 4.421em;
+				text-align: center;
+				border-radius: 50%;
+				color: inherit;
+			}
+		}
+		#convertion-result {
+			@include box-shadow( none );
+			background: transparent;
+		}
+		.children-size {
+			margin: 2em 0;
 		}
 }

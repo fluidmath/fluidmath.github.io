@@ -12,29 +12,41 @@ block content
 	main
 		div(data-math)
 			h1 Math conversions
-			form
+
+			form.fluid-math
 				div
-					label(for="pixel-base") Pixel base size
-					input.px(id="pixel-base" placeholder="16" value="16")
+					label.centered(for="parent-size") Parent element size
+					input.centered.px(id="parent-size" placeholder="960" )
+				div.children-size
+					label.centered Children size
+					input.centered(id="pixel-value" placeholder="24")
 				div
-					h2 Convertion
+					button.centered(id="convert") Convert!
+				div
+					input.centered(id="convertion-result" placeholder="Result")
+
+			form.fluid-math
+				div
+					label.centered(for="pixel-base") Pixel base size
+					input.centered(id="pixel-base" placeholder="16" value="16")
+				div.cf
 					div
-						label Px To Em
-						input.px(id="pixel-value" placeholder="24")
+						label.centered Px To Em
+						input.centered(id="pixel-value" placeholder="24")
 					div
-						label Em To Px
-						input.px(id="em-value" placeholder="1.5")
+						label.centered Em To Px
+						input.centered(id="em-value" placeholder="1.5")
 				div
-					button(id="convert") Convert!
+					button.centered(id="convert") Convert!
 				div
-					h2 Result
-					input(id="convertion-result" placeholder="Result")
+					input.centered(id="convertion-result" placeholder="Result" readonly )
 
 
 	aside 
 		h4.aside.centered.muli select your tool
 		ul
-			li(data-math) Math
-			li(data-sprite-cow) Sprite Cow
-			li(data-sprite-gen) Sprite Gen
+			li(data-math) Fluid math
+			li(data-border) Border radius
 			li(data-hex) Hex to RGBA
+			li(data-shadow) Box shadow
+			li(data-sprite-cow) Sprite Cow

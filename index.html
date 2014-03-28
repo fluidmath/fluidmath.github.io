@@ -15,28 +15,42 @@
       <main>
         <div data-math>
           <h1>Math conversions</h1>
-          <form>
+          <form class="fluid-math">
             <div>
-              <label for="pixel-base">Pixel base size</label>
-              <input id="pixel-base" placeholder="16" value="16" class="px">
+              <label for="parent-size" class="centered">Parent element size</label>
+              <input id="parent-size" placeholder="960" class="centered px">
+            </div>
+            <div class="children-size">
+              <label class="centered">Children size</label>
+              <input id="pixel-value" placeholder="24" class="centered">
             </div>
             <div>
-              <h2>Convertion</h2>
+              <button id="convert" class="centered">Convert!</button>
+            </div>
+            <div>
+              <input id="convertion-result" placeholder="Result" class="centered">
+            </div>
+          </form>
+          <form class="fluid-math">
+            <div>
+              <label for="pixel-base" class="centered">Pixel base size</label>
+              <input id="pixel-base" placeholder="16" value="16" class="centered">
+            </div>
+            <div class="cf">
               <div>
-                <label>Px To Em</label>
-                <input id="pixel-value" placeholder="24" class="px">
+                <label class="centered">Px To Em</label>
+                <input id="pixel-value" placeholder="24" class="centered">
               </div>
               <div>
-                <label>Em To Px</label>
-                <input id="em-value" placeholder="1.5" class="px">
+                <label class="centered">Em To Px</label>
+                <input id="em-value" placeholder="1.5" class="centered">
               </div>
             </div>
             <div>
-              <button id="convert">Convert!</button>
+              <button id="convert" class="centered">Convert!</button>
             </div>
             <div>
-              <h2>Result</h2>
-              <input id="convertion-result" placeholder="Result">
+              <input id="convertion-result" placeholder="Result" readonly class="centered">
             </div>
           </form>
         </div>
@@ -44,10 +58,11 @@
       <aside>
         <h4 class="aside centered muli">select your tool</h4>
         <ul>
-          <li data-math>Math</li>
-          <li data-sprite-cow>Sprite Cow</li>
-          <li data-sprite-gen>Sprite Gen</li>
+          <li data-math>Fluid math</li>
+          <li data-border>Border radius</li>
           <li data-hex>Hex to RGBA</li>
+          <li data-shadow>Box shadow</li>
+          <li data-sprite-cow>Sprite Cow</li>
         </ul>
       </aside>
     </div>
