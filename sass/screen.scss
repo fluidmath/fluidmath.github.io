@@ -274,8 +274,7 @@ section[data-view="radius"] {
 				margin: 2.875em 0 2.875em 12.5%;
 				width: inherit;
 				height: inherit;
-				@include box-shadow( 0px 0px 15px 0px rgba(25, 25, 25, 0.5) );
-				background: $traslucid-cyan url(../images/patterns/crissXcross.png);
+				background: url(../images/patterns/crissXcross.png);
 				color: rgba( 255, 255, 255, 0.85 );
 				font-weight: bold;
 				text-align: center;
