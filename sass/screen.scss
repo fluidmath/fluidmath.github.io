@@ -12,6 +12,9 @@ $traslucid-cyan : rgba(41, 199, 200, 0.8);
 $general : rgba(45, 46, 51, 0.5);
 $traslucid : rgba(33, 34, 37, 0.65);
 
+// -- Breakpoints.
+
+$break-large : 1024px;
 
 * {
 	&:focus {
@@ -28,10 +31,13 @@ body {
 	color: $font;
 	background: url(../images/patterns/diagmonds.png) repeat;
 	padding: 2em 0;
+		@media screen and (max-width : $break-large) {
+			padding: 0;
+		}
 }
 
 .wrapp {
-	max-width: 60em;
+	width: 60em;
 	margin: 0 auto;
 }
 
@@ -41,6 +47,10 @@ body {
 
 .muli {
 	font-family: $muli;
+}
+
+.hidden {
+	display: none;
 }
 
 .cf {
@@ -122,10 +132,13 @@ aside {
 			text-align: center;
 			padding: 2em 0;
 			padding: 1em 1.5em;
-
+				
+				&.active {
+					border-right: 5px solid $aqua;
+				}
 				&:hover {
 					cursor: pointer;
-					border-right: 5px solid $aqua;
+					background: lighten( $traslucid, 7% );
 				}
 				&:last-child {
 					border-bottom: none;
@@ -153,7 +166,7 @@ main {
 			font-size: 2em;
 			padding: 0 0 0 1em;
 			position: relative;
-			margin: 0 0 2em 0;
+			margin: 0 0 1em 0;
 			 &::before {
 				content: ' ';
 				position: absolute;
@@ -164,6 +177,13 @@ main {
 				top: .25em;
 				border-radius: 50%;
 			 }
+		}
+		section {
+			height: 33.6875em;
+			display: none;
+				&.active {
+					display: block;
+				}
 		}
 }
 
@@ -203,17 +223,15 @@ form {
 		&:first-of-type {
 			border: none;
 		}
-		&.fluid-math {
-			input {
-				@include box-shadow( 0px 0px 5px 0px rgba(160, 160, 160, 0.5) );
-				border: none;
-				font-size: 1.2em;
-				width: 4.421em;
-				height: 4.421em;
-				text-align: center;
-				border-radius: 50%;
-				color: $main-font;
-			}
+		input {
+			@include box-shadow( 0px 0px 5px 0px rgba(160, 160, 160, 0.5) );
+			border: none;
+			font-size: 1.2em;
+			width: 4.421em;
+			height: 4.421em;
+			text-align: center;
+			border-radius: 50%;
+			color: $main-font;
 		}
 		input.result {
 			@include box-shadow( none );
@@ -237,4 +255,61 @@ form {
 					font-size: 1.2em;
 				}
 		}
+}
+
+section[data-view="radius"] {
+	
+	form {
+
+		position: relative;
+		margin: 0 auto;
+		display: block;
+		width: 75%;
+		height: 75%;
+		margin-left: 12.5%;
+			div {
+				position: relative;
+				transition: all ease 1s;
+				padding: 3em;
+				margin: 2.875em 0 2.875em 12.5%;
+				width: inherit;
+				height: inherit;
+				@include box-shadow( 0px 0px 15px 0px rgba(25, 25, 25, 0.5) );
+				background: $traslucid-cyan url(../images/patterns/crissXcross.png);
+				color: rgba( 255, 255, 255, 0.85 );
+				font-weight: bold;
+				text-align: center;
+
+					p {						
+						width: 100%;
+						height: 1em;
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						margin-bottom: auto;
+						margin-top: auto;
+					}
+			}
+	}
+	.border-value {
+		position: absolute;
+		padding: .5em;
+		width: 3.421em;
+		height: 3.421em;
+			&.top {
+				top: 0;
+			}
+			&.left {
+				left: 0;
+			}
+			&.right {
+				right: 0;
+			}
+			&.bottom {
+				bottom: 0;
+			}
+	}
+	
+
 }

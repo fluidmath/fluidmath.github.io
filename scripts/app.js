@@ -1,3 +1,33 @@
+// General behaviour
+
+;(function(){
+
+	var d = document,
+		features = d.get('#features li'),
+		first_view = d.get('section[data-view]:first-child');
+
+	first_view.addClass('active');
+	features[0].addClass('active');
+
+	features.addEvent('click', changeView);
+
+	function changeView(){
+
+		var view = this.data('view'),
+			active_section = d.get('section[data-view].active'),
+			section_to_show = d.get('section[data-view='+view+']'),
+			feature_to_show = d.get('li[data-view='+view+']');
+
+		features.removeClass('active');
+		active_section.removeClass('active');
+
+		feature_to_show.addClass('active');
+		section_to_show.addClass('active');
+
+	}
+
+})();
+
 // Math convertions
 
 ;(function(){
@@ -5,7 +35,9 @@
 	// 'Global' variables.
 	var d = document, w = window,
 		// --------------------- //
-		m = d.get('div[data-math]'); // Fluid math container.
+		m = d.get('section[data-view=math]'); // Fluid math container.
+
+	function clear() { this.value = '';	}
 
 	// PX to Em.
 	;(function(){
@@ -28,10 +60,6 @@
 			not_base_inputs.addEvent('focus', clearAll );
 			not_base_inputs.addEvent('keyup', changeVal );
 
-			function clear() {
-				this.value = '';
-			}
-
 			function clearAll() {
 
 				var i = 0, l = not_base_inputs.length;
@@ -40,7 +68,7 @@
 					not_base_inputs[i].value = '';
 				}
 
-				changeConvertionType( this.data( 'conv-type' ) );
+				convertionType = this.data( 'conv-type' );
 
 			}
 
@@ -60,8 +88,6 @@
 					}
 				}
 			}
-
-			function changeConvertionType( ct) { convertionType = ct; }
 
 			submit.addEventListener('click', function( e ){
 				e.preventDefault();
@@ -87,8 +113,6 @@
 		base_input.addEvent('keyup', changeBase);
 		submit.addEvent('click', doConvertion);
 
-		function clear() { this.value = '';	}
-
 		function changeVal(){ value = Number(this.value); }
 
 		function changeBase(){ base = Number(this.value); }
@@ -101,5 +125,13 @@
 
 
 	})();
+
+})();
+
+// Border-radius
+
+;(function(){
+
+	var d = document, w = window;
 
 })();

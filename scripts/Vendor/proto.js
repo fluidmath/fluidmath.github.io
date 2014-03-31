@@ -274,6 +274,7 @@
 	Array.prototype.find = NodeList.prototype.find;
 	Array.prototype.cache = NodeList.prototype.cache;
 	Array.prototype.void = NodeList.prototype.void;
+	Array.prototype.addClass = NodeList.prototype.addClass;
 
 	Array.prototype.sum =  function(){
 		var i=0,

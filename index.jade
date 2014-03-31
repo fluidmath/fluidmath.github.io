@@ -10,7 +10,7 @@ block header
 
 block content
 	main
-		div(data-math).cf
+		section(data-view="math").cf
 			h1 Math conversions
 
 			form.fluid-math( autocomplete="off" data-percent )
@@ -25,7 +25,7 @@ block content
 				div
 					button.centered(id="convert-percent") Convert!
 				div
-					input.centered.result(id="percent-result" placeholder="Result")
+					input.centered.result(id="percent-result" placeholder="Result" readonly)
 
 			form.fluid-math(autocomplete="off" data-px-em)
 				div
@@ -42,17 +42,38 @@ block content
 				div
 					button.centered(id="convert-px") Convert!
 				div
-					input.centered.result(id="px-result" placeholder="Result" readonly )
+					input.centered.result(id="px-result" placeholder="Result" readonly)
+
+		section(data-view="radius")
+			h1 Border radius
+
+			form
+				input( placeholder="px" ).border-value.top.left
+				input( placeholder="px" ).border-value.bottom.left
+				input( placeholder="px" ).border-value.top.right
+				input( placeholder="px" ).border-value.bottom.right
+				.border-preview
+					p( data-radius-result )
+
+
+		section(data-view="hex")
+			h1 Hex to RGBA
+
+		section(data-view="shadow")
+			h1 Box Shadow
+
+		section(data-view="sprite-cow")
+			h1 Sprite cow
 
 
 	aside 
 		h4.aside.centered.muli select your tool
-		ul
-			li(data-math) Fluid math
-			li(data-border) Border radius
-			li(data-hex) Hex to RGBA
-			li(data-shadow) Box shadow
-			li(data-sprite-cow) Sprite Cow
+		ul#features
+			li(data-view="math") Fluid math
+			li(data-view="radius") Border radius
+			li(data-view="hex") Hex to RGBA
+			li(data-view="shadow") Box shadow
+			li(data-view="sprite-cow") Sprite Cow
 
 block scripts
 	script( src="scripts/Vendor/proto.js" )

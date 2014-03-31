@@ -13,7 +13,7 @@
     </header>
     <div class="wrapp content cf">
       <main>
-        <div data-math class="cf">
+        <section data-view="math" class="cf">
           <h1>Math conversions</h1>
           <form autocomplete="off" data-percent class="fluid-math">
             <div>
@@ -32,10 +32,9 @@
               <button id="convert-percent" class="centered">Convert!</button>
             </div>
             <div>
-              <input id="percent-result" placeholder="Result" class="centered result">
+              <input id="percent-result" placeholder="Result" readonly class="centered result">
             </div>
           </form>
-
           <form autocomplete="off" data-px-em class="fluid-math">
             <div>
               <label for="pixel-base" class="centered">Pixel base size</label>
@@ -60,16 +59,37 @@
               <input id="px-result" placeholder="Result" readonly class="centered result">
             </div>
           </form>
-        </div>
+        </section>
+        <section data-view="radius">
+          <h1>Border radius</h1>
+          <form>
+            <input placeholder="px" class="border-value top left">
+            <input placeholder="px" class="border-value bottom left">
+            <input placeholder="px" class="border-value top right">
+            <input placeholder="px" class="border-value bottom right">
+            <div class="border-preview">
+              <p data-radius-result></p>
+            </div>
+          </form>
+        </section>
+        <section data-view="hex">
+          <h1>Hex to RGBA</h1>
+        </section>
+        <section data-view="shadow">
+          <h1>Box Shadow</h1>
+        </section>
+        <section data-view="sprite-cow">
+          <h1>Sprite cow</h1>
+        </section>
       </main>
       <aside>
         <h4 class="aside centered muli">select your tool</h4>
-        <ul>
-          <li data-math>Fluid math</li>
-          <li data-border>Border radius</li>
-          <li data-hex>Hex to RGBA</li>
-          <li data-shadow>Box shadow</li>
-          <li data-sprite-cow>Sprite Cow</li>
+        <ul id="features">
+          <li data-view="math">Fluid math</li>
+          <li data-view="radius">Border radius</li>
+          <li data-view="hex">Hex to RGBA</li>
+          <li data-view="shadow">Box shadow</li>
+          <li data-view="sprite-cow">Sprite Cow</li>
         </ul>
       </aside>
     </div>
