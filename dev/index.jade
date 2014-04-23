@@ -1,80 +1,32 @@
-extend jade - templates/layout.jade
+extend jade/partials/layout.jade
 
 block head
 	title WebToolz
 	link(rel="stylesheet" href="stylesheets/screen.css" )
+	link( rel="icon" href="images/layout/icons/fav.ico" type="image/x-icon" )
 
 block header
-	h1.logo.muli Web
-			span Toolz
+	h1.logo.muli Web <span>Toolz</span>
 
 block content
-	main
-		section(data-view="math").cf
-			h1 Math conversions
-
-			form.fluid-math( autocomplete="off" data-percent )
-				div
-					label.centered( for="parent-size" ) Parent element size
-					.px
-						input.centered.base-value(id="parent-size" placeholder="960" )
-				div.children-size
-					label.centered Children size
-					.px
-						input.centered.values(id="children-size" placeholder="480")
-				div
-					button.centered(id="convert-percent") Convert!
-				div
-					input.centered.result(id="percent-result" placeholder="Result" readonly)
-
-			form.fluid-math(autocomplete="off" data-px-em)
-				div
-					label.centered(for="pixel-base") Pixel base size
-					.px
-						input.centered.base-value(id="pixel-base" placeholder="16" value="16")
-				div.cf
-					div
-						label.centered Px To Em
-						input.centered.values(id="pixel-value" placeholder="px" data-conv-type="px-to-em")
-					div
-						label.centered Em To Px
-						input.centered.values(id="em-value" placeholder="em" data-conv-type="em-to-px")
-				div
-					button.centered(id="convert-px") Convert!
-				div
-					input.centered.result(id="px-result" placeholder="Result" readonly)
-
-		section(data-view="radius")
-			h1 Border radius
-
-			form
-				input( placeholder="px" ).border-value.top.left
-				input( placeholder="px" ).border-value.top.right
-				input( placeholder="px" ).border-value.bottom.right
-				input( placeholder="px" ).border-value.bottom.left
-				.border-preview
-					p( data-radius-result )
-
-
-		section(data-view="hex")
-			h1 Hex to RGBA
-
-		section(data-view="shadow")
-			h1 Box Shadow
-
-		section(data-view="sprite-cow")
-			h1 Sprite cow
-
+	main( ng-view )
 
 	aside 
 		h4.aside.centered.muli select your tool
 		ul#features
-			li(data-view="math") Fluid math
-			li(data-view="radius") Border radius
-			li(data-view="hex") Hex to RGBA
-			li(data-view="shadow") Box shadow
-			li(data-view="sprite-cow") Sprite Cow
+			li 
+				a(href="#/math") Fluid math
+			li 
+				a(href="#/radius") Border radius
+			li 
+				a(href="#/") Hex to RGBA
+			li 
+				a(href="#/") Box shadow
+			li 
+				a(href="#/") Sprite Cow
 
 block scripts
-	script( src="scripts/Vendor/proto.js" )
+	//-script( src="scripts/Vendor/proto.js" )
+	script( src="scripts/Vendor/angular.min.js" )
+	script( src="scripts/Vendor/angular-route.min.js" )
 	script( src="scripts/app.js" )

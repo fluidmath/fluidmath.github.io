@@ -1,95 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="webtoolz">
   <head>
     <meta charset="UTF-8">
     <title>WebToolz</title>
     <link rel="stylesheet" href="stylesheets/screen.css">
+    <link rel="icon" href="images/layout/icons/fav.ico" type="image/x-icon">
   </head>
   <body>
     <header>
       <div class="wrapp cf">
-        <h1 class="logo muli">Web<span>Toolz</span></h1>
+        <h1 class="logo muli">Web <span>Toolz</span></h1>
       </div>
     </header>
     <div class="wrapp content cf">
-      <main>
-        <section data-view="math" class="cf">
-          <h1>Math conversions</h1>
-          <form autocomplete="off" data-percent class="fluid-math">
-            <div>
-              <label for="parent-size" class="centered">Parent element size</label>
-              <div class="px">
-                <input id="parent-size" placeholder="960" class="centered base-value">
-              </div>
-            </div>
-            <div class="children-size">
-              <label class="centered">Children size</label>
-              <div class="px">
-                <input id="children-size" placeholder="480" class="centered values">
-              </div>
-            </div>
-            <div>
-              <button id="convert-percent" class="centered">Convert!</button>
-            </div>
-            <div>
-              <input id="percent-result" placeholder="Result" readonly class="centered result">
-            </div>
-          </form>
-          <form autocomplete="off" data-px-em class="fluid-math">
-            <div>
-              <label for="pixel-base" class="centered">Pixel base size</label>
-              <div class="px">
-                <input id="pixel-base" placeholder="16" value="16" class="centered base-value">
-              </div>
-            </div>
-            <div class="cf">
-              <div>
-                <label class="centered">Px To Em</label>
-                <input id="pixel-value" placeholder="px" data-conv-type="px-to-em" class="centered values">
-              </div>
-              <div>
-                <label class="centered">Em To Px</label>
-                <input id="em-value" placeholder="em" data-conv-type="em-to-px" class="centered values">
-              </div>
-            </div>
-            <div>
-              <button id="convert-px" class="centered">Convert!</button>
-            </div>
-            <div>
-              <input id="px-result" placeholder="Result" readonly class="centered result">
-            </div>
-          </form>
-        </section>
-        <section data-view="radius">
-          <h1>Border radius</h1>
-          <form>
-            <input placeholder="px" class="border-value top left">
-            <input placeholder="px" class="border-value top right">
-            <input placeholder="px" class="border-value bottom right">
-            <input placeholder="px" class="border-value bottom left">
-            <div class="border-preview">
-              <p data-radius-result></p>
-            </div>
-          </form>
-        </section>
-        <section data-view="hex">
-          <h1>Hex to RGBA</h1>
-        </section>
-        <section data-view="shadow">
-          <h1>Box Shadow</h1>
-        </section>
-        <section data-view="sprite-cow">
-          <h1>Sprite cow</h1>
-        </section>
-      </main>
+      <main ng-view></main>
       <aside>
         <h4 class="aside centered muli">select your tool</h4>
         <ul id="features">
-          <li data-view="math">Fluid math</li>
-          <li data-view="radius">Border radius</li>
-          <li data-view="hex">Hex to RGBA</li>
-          <li data-view="shadow">Box shadow</li>
-          <li data-view="sprite-cow">Sprite Cow</li>
+          <li><a href="#/math">Fluid math</a></li>
+          <li><a href="#/radius">Border radius</a></li>
+          <li><a href="#/">Hex to RGBA</a></li>
+          <li><a href="#/">Box shadow</a></li>
+          <li><a href="#/">Sprite Cow</a></li>
         </ul>
       </aside>
     </div>
@@ -97,7 +29,8 @@
       <div class="wrapp cf">
       </div>
     </footer>
-    <script src="scripts/Vendor/proto.js"></script>
+    <script src="scripts/Vendor/angular.min.js"></script>
+    <script src="scripts/Vendor/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
   </body>
 </html>

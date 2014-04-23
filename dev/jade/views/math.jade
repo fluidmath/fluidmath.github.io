@@ -1,0 +1,33 @@
+section(data-view="math").cf
+	h1 Math conversions
+
+	form.fluid-math( autocomplete="off" data-percent )
+		div
+			label.centered( for="parent-size" ) Parent element size
+			.px
+				input.centered.base-value(id="parent-size" placeholder="960" )
+		div.children-size
+			label.centered Children size
+			.px
+				input.centered.values(id="children-size" placeholder="480")
+		div
+			button.centered(id="convert-percent") Convert!
+		div
+			input.centered.result(id="percent-result" placeholder="Result" readonly)
+
+	form.fluid-math(autocomplete="off" data-px-em)
+		div
+			label.centered(for="pixel-base") Pixel base size
+			.px
+				input.centered.base-value(id="pixel-base" placeholder="16" value="16")
+		div.cf
+			div
+				label.centered Px To Em
+				input.centered.values(id="pixel-value" placeholder="px" data-conv-type="px-to-em")
+			div
+				label.centered Em To Px
+				input.centered.values(id="em-value" placeholder="em" data-conv-type="em-to-px")
+		div
+			button.centered(id="convert-px") Convert!
+		div
+			input.centered.result(id="px-result" placeholder="Result" readonly)

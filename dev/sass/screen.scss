@@ -23,6 +23,11 @@ $break-large : 1024px;
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 body {
 	font-size: 100%;
 	width: 100%;
@@ -121,9 +126,13 @@ aside {
 	width: 13.313em;
 	float: left;
 		li {
-			
 			border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
-			border-right: 5px solid transparent;
+			border-right: 5px solid transparent;			
+				&:last-child {
+					border-bottom: none;
+				}
+		}
+		a {			
 			background: $traslucid;
 			display: block;
 			width: 100%;
@@ -131,17 +140,12 @@ aside {
 			font-size: 1.5em;
 			text-align: center;
 			padding: 2em 0;
-			padding: 1em 1.5em;
-				
+			padding: 1em 1.5em;				
 				&.active {
 					border-right: 5px solid $aqua;
 				}
 				&:hover {
-					cursor: pointer;
 					background: lighten( $traslucid, 7% );
-				}
-				&:last-child {
-					border-bottom: none;
 				}
 		}
 }
@@ -180,7 +184,6 @@ main {
 		}
 		section {
 			height: 33.6875em;
-			display: none;
 				&.active {
 					display: block;
 				}

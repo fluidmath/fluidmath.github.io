@@ -1,0 +1,48 @@
+
+<section data-view="math" class="cf">
+  <h1>Math conversions</h1>
+  <form autocomplete="off" data-percent="data-percent" class="fluid-math">
+    <div>
+      <label for="parent-size" class="centered">Parent element size</label>
+      <div class="px">
+        <input id="parent-size" placeholder="960" class="centered base-value"/>
+      </div>
+    </div>
+    <div class="children-size">
+      <label class="centered">Children size</label>
+      <div class="px">
+        <input id="children-size" placeholder="480" class="centered values"/>
+      </div>
+    </div>
+    <div>
+      <button id="convert-percent" class="centered">Convert!</button>
+    </div>
+    <div>
+      <input id="percent-result" placeholder="Result" readonly="readonly" class="centered result"/>
+    </div>
+  </form>
+  <form autocomplete="off" data-px-em="data-px-em" class="fluid-math">
+    <div>
+      <label for="pixel-base" class="centered">Pixel base size</label>
+      <div class="px">
+        <input id="pixel-base" placeholder="16" value="16" class="centered base-value"/>
+      </div>
+    </div>
+    <div class="cf">
+      <div>
+        <label class="centered">Px To Em</label>
+        <input id="pixel-value" placeholder="px" data-conv-type="px-to-em" class="centered values"/>
+      </div>
+      <div>
+        <label class="centered">Em To Px</label>
+        <input id="em-value" placeholder="em" data-conv-type="em-to-px" class="centered values"/>
+      </div>
+    </div>
+    <div>
+      <button id="convert-px" class="centered">Convert!</button>
+    </div>
+    <div>
+      <input id="px-result" placeholder="Result" readonly="readonly" class="centered result"/>
+    </div>
+  </form>
+</section>
