@@ -2,12 +2,13 @@
 <section data-view="radius" class="cf">
   <h1>Border radius</h1>
   <form>
-    <input placeholder="px" class="border-value top left"/>
-    <input placeholder="px" class="border-value top right"/>
-    <input placeholder="px" class="border-value bottom right"/>
-    <input placeholder="px" class="border-value bottom left"/>
-    <div class="border-preview">
-      <p data-radius-result="data-radius-result"></p>
+    <input type="number" placeholder="px" ng-model="topLeft" class="border-value top left"/>
+    <input type="number" placeholder="px" ng-model="topRight" class="border-value top right"/>
+    <input type="number" placeholder="px" ng-model="bottomRight" class="border-value bottom right"/>
+    <input type="number" placeholder="px" ng-model="bottomLeft" class="border-value bottom left"/>
+    <div style=" border-top-left-radius : {{topLeft}}px; border-top-right-radius : {{topRight}}px; border-bottom-left-radius : {{bottomLeft}}px;  border-bottom-right-radius : {{bottomRight}}px; border-radius: {{ general }}px" class="border-preview">
+      <p data-radius-result="data-radius-result">{{ 'border-radius:' | {{topLeft+px}} | {{topRight}} }}</p>
     </div>
+    <input placeholder="General" ng-model="general" ng-keyup="updatePreview();" class="centered"/>
   </form>
 </section>

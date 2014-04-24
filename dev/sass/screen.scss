@@ -48,6 +48,8 @@ body {
 
 .centered {
 	text-align: center;
+	display: table;
+	margin: 0 auto;
 }
 
 .muli {
@@ -235,6 +237,11 @@ form {
 			text-align: center;
 			border-radius: 50%;
 			color: $main-font;
+				&[type=number]::-webkit-inner-spin-button, 
+				&[type=number]::-webkit-outer-spin-button { 
+				  -webkit-appearance: none; 
+				  margin: 0; 
+				}
 		}
 		input.result {
 			@include box-shadow( none );

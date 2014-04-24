@@ -7,12 +7,15 @@ app.config(function($routeProvider){
 			templateUrl : 'views/math.html'
 		})
 		.when('/radius', {
-			templateUrl : 'views/radius.html'
+			templateUrl : 'views/radius.html',
+			controller : 'radiusController'
 		})
 		.otherwise({
 			redirectTo : '/math'
 		})
 });
+
+// Fluid Math controllers
 
 app.controller('emConvertion',function($scope){
 	$scope.base = 16;
@@ -50,4 +53,12 @@ app.controller('percentConvertion',function($scope){
 		}
 	}
 
+});
+
+// Border radius controller
+
+app.controller('radiusController',function($scope){
+	$scope.updatePreview = function(){
+		$scope.radiusPreview = 'border-radius: '
+	}
 });
