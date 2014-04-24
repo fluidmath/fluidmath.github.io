@@ -376,3 +376,13 @@ function random(min, max, decimals) {
 }
 
 function log(x){ console.log(x); }
+
+function get(selector){
+   var domResult = document.querySelectorAll(selector);
+
+   if(domResult.length > 1){
+      return domResult;
+   } else {
+      return domResult[0];
+   }
+}

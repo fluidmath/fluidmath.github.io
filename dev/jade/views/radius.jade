@@ -2,10 +2,11 @@ section(data-view="radius").cf
 	h1 Border radius
 
 	form
-		input( type="number" placeholder="px"  ng-model="topLeft" ).border-value.top.left
-		input( type="number" placeholder="px"  ng-model="topRight" ).border-value.top.right
-		input( type="number" placeholder="px"  ng-model="bottomRight" ).border-value.bottom.right
-		input( type="number" placeholder="px" ng-model="bottomLeft" ).border-value.bottom.left
+		input( type="number" placeholder="px"  ng-model="topLeft" ng-keyup="updatePreview(); generalUpdate();" ).border-value.top.left
+		input( type="number" placeholder="px"  ng-model="topRight" ng-keyup="updatePreview();" ).border-value.top.right
+		input( type="number" placeholder="px"  ng-model="bottomRight" ng-keyup="updatePreview();" ).border-value.bottom.right
+		input( type="number" placeholder="px" ng-model="bottomLeft"  ng-keyup="updatePreview();" ).border-value.bottom.left
 		.border-preview( style=" border-top-left-radius : {{topLeft}}px; border-top-right-radius : {{topRight}}px; border-bottom-left-radius : {{bottomLeft}}px;  border-bottom-right-radius : {{bottomRight}}px; border-radius: {{ general }}px" )
-			p( data-radius-result ){{ 'border-radius:' | {{topLeft+px}} | {{topRight}} }}
-		input(placeholder="General" ng-model="general" ng-keyup="updatePreview();" class="centered" )
+			p( data-radius-result ) border-radius: {{ result }}
+
+		//- input(placeholder="General" ng-model="general" ng-keyup="updatePreview();" class="centered" )

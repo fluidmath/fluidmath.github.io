@@ -58,7 +58,39 @@ app.controller('percentConvertion',function($scope){
 // Border radius controller
 
 app.controller('radiusController',function($scope){
-	$scope.updatePreview = function(){
-		$scope.radiusPreview = 'border-radius: '
+	
+	var mainValue = $scope.topLeft;
+
+	$scope.generalUpdate = function(){
+		if ( 	( !($scope.topRight) || ( $scope.topRight === mainValue) ) 
+				&& ( !($scope.bottomRight) || ( $scope.bottomRight === mainValue) )
+				&& ( !($scope.bottomLeft) || ( $scope.bottomLeft === mainValue) )
+			) {
+
+			$scope.result = ($scope.topLeft || 0)+'px';
+			// ------------------------------ //
+			$scope.topRight = $scope.topLeft;
+			$scope.bottomRight = $scope.topLeft;
+			$scope.bottomLeft = $scope.topLeft;
+
+			mainValue = $scope.topLeft || 0;
+
+		}
 	}
+
+	$scope.updatePreview = function(){
+
+		switch( true ){
+
+			case ( ($scope.topLeft === $scope.bottom) && ($scope.topRight === $scope.bottomLeft) ) :
+				alert('dn');
+				$scope.result = ($scope.topLeft || 0)+'px ' + ($scope.topRight || 0)+'px ';
+					break;
+			default: 
+				$scope.result = ($scope.topLeft || 0)+'px ' + ($scope.topRight || 0)+'px ' + ($scope.bottomRight || 0)+'px ' + ($scope.bottomLeft || 0)+'px ';
+					break;
+		}
+
+	}
+
 });
