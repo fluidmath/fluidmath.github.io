@@ -142,8 +142,9 @@ app.controller('colorController',function($scope){
 					hex = '#' + red.toString(16) +
 					           green.toString(16) +
 					           blue.toString(16);
-
-			    $scope.result = hex;
+				if( ( rgb.length >= 3 ) && ( (Number(red)) && (Number(blue)) && (Number(green)) ) ) {
+				    $scope.result = hex;
+				}
 
 			}
 		};
