@@ -10,6 +10,10 @@ app.config(function($routeProvider){
 			templateUrl : 'views/radius.html',
 			controller : 'radiusController'
 		})
+		.when('/sprite-cow', {
+			templateUrl : 'views/sprites.html',
+			// controller : 'radiusController'
+		})
 		.otherwise({
 			redirectTo : '/math'
 		})
