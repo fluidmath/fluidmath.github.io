@@ -34,7 +34,7 @@ app.controller('emConvertion',function($scope){
 			}
 		};
 
-	$scope.clear = function(){ $scope.px = ''; $scope.em = ''};
+	$scope.clear = function(){ $scope.px = ''; $scope.em = ''; $scope.result = '' };
 	$scope.clearBase = function(){ $scope.base = ''; };
 	$scope.changeConvertionType = function($event){ convertionType = $event.target.getAttribute('data-convertionType'); }
 	$scope.pixelConvertion = function(){
@@ -46,7 +46,7 @@ app.controller('emConvertion',function($scope){
 app.controller('percentConvertion',function($scope){
 	$scope.base = 960;
 
-	$scope.clear = function($event){ $event.target.value = ''; };
+	$scope.clear = function($event){ $event.target.value = ''; $scope.result = '' };
 	$scope.calculatePercent = function() {
 		if( Number($scope.px) && Number($scope.base)){
 			$scope.result = ($scope.px/$scope.base*100)+'%';
