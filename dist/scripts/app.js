@@ -81,14 +81,16 @@ app.controller('radiusController',function($scope){
 	$scope.updatePreview = function(){
 
 		switch( true ){
-
-			case ( ($scope.topLeft === $scope.bottom) && ($scope.topRight === $scope.bottomLeft) ) :
-				alert('dn');
+			case ( ($scope.topLeft === $scope.topRight)  && ($scope.topLeft === $scope.bottomLeft) && ($scope.topLeft === $scope.bottomRight) ) :
+				$scope.result = ($scope.topLeft || 0)+'px';
+					break;
+			case ( ($scope.topLeft === $scope.bottomRight) && ($scope.topRight === $scope.bottomLeft) ) :
 				$scope.result = ($scope.topLeft || 0)+'px ' + ($scope.topRight || 0)+'px ';
 					break;
 			default: 
 				$scope.result = ($scope.topLeft || 0)+'px ' + ($scope.topRight || 0)+'px ' + ($scope.bottomRight || 0)+'px ' + ($scope.bottomLeft || 0)+'px ';
 					break;
+
 		}
 
 	}
