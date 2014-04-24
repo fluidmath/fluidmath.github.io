@@ -3,8 +3,8 @@
   <h1>Hex to RGBA</h1>
   <form class="centered">
     <div>
-      <input placeholder="#Hex" ng-model="hex" data-convertionType="hex-to-rgba" ng-focus="changeConvertionType($event); clear();"/>
-      <input placeholder="Rgb" data-convertionType="rgba-to-hex" ng-model="rgb" ng-focus="changeConvertionType($event); clear();"/>
+      <input type="text" placeholder="#Hex" ng-model="hex" data-convertionType="hex-to-rgba" ng-focus="changeConvertionType($event); clear();"/>
+      <input type="text" placeholder="Rgb" data-convertionType="rgba-to-hex" ng-model="rgb" ng-focus="changeConvertionType($event); clear();"/>
     </div>
     <div>
       <label>Opacity {{ opacity }} %</label>
@@ -14,7 +14,7 @@
       <button ng-click="convert();">Convert!</button>
     </div>
     <div>
-      <input placeholder="Result" readonly="readonly" ng-model="result" class="result"/>
+      <input type="text" placeholder="Result" readonly="readonly" ng-model="result" class="result"/>
     </div>
   </form>
 </section>

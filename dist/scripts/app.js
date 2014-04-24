@@ -19,7 +19,7 @@ app.config(function($routeProvider){
 		})
 		.when('/box-shadow', {
 			templateUrl : 'views/box-shadow.html',
-			// controller : 'boxShadowController'
+			controller : 'boxShadowController'
 		})
 		.otherwise({
 			redirectTo : '/math'
@@ -156,5 +156,15 @@ app.controller('colorController',function($scope){
 	}
 
 	$scope.convert = function() { convertions[convertionType](); }
+
+});
+
+app.controller('boxShadowController',function($scope){
+
+	$scope.offsetY = 16;
+	$scope.offsetX = 62;
+	$scope.blur = 32;
+	$scope.opacity = 0.5;
+	$scope.spread = 10;
 
 });

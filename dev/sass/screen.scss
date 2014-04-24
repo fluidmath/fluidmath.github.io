@@ -28,6 +28,11 @@ a {
 	color: inherit;
 }
 
+small {
+	font-size: .7em;
+	opacity: 0.7;
+}
+
 body {
 	font-size: 100%;
 	width: 100%;
@@ -49,9 +54,12 @@ body {
 .centered {
 	text-align: center;
 	display: table;
-	width:100%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+form.centered {
+	width: 100%;
 }
 
 .muli {
@@ -60,6 +68,10 @@ body {
 
 .hidden {
 	display: none;
+}
+
+.floated {
+	float: left;
 }
 
 .cf {
@@ -217,6 +229,9 @@ form {
 			display: block;
 			width: 100%;
 			margin-bottom: .8em;
+				span {
+					color: $aqua;
+				}
 		}
 		h2 {
 			font-size: 1.3em;
@@ -230,7 +245,7 @@ form {
 		&:first-of-type {
 			border: none;
 		}
-		input:not([type=range]) {
+		input[type=text], input[type=number] {
 			@include box-shadow( 0px 0px 5px 0px rgba(160, 160, 160, 0.5) );
 			border: none;
 			font-size: 1.2em;
@@ -331,5 +346,20 @@ section[data-view="color-convertions"] {
 	}
 	.result {
 		height: auto;
+	}
+}
+
+$shadow-size : 10em;
+
+section[data-view="boxShadow"] {
+	.result {
+		height: auto;
+	}
+
+	.shadow-preview {
+		width: $shadow-size;
+		height: $shadow-size;
+		background: url(../images/patterns/crissXcross.png);
+		margin: 2.5em auto;
 	}
 }

@@ -1,48 +1,48 @@
 
 <section data-view="math" class="cf">
   <h1>Math conversions</h1>
-  <form autocomplete="off" data-percent="data-percent" ng-controller="percentConvertion" class="fluid-math">
+  <form autocomplete="off" ng-controller="percentConvertion" class="fluid-math">
     <div>
       <label for="parent-size" class="centered">Parent element size</label>
       <div class="px">
-        <input id="parent-size" placeholder="960" ng-model="base" ng-focus="clear($event);" class="centered base-value"/>
+        <input type="text" placeholder="960" ng-model="base" ng-focus="clear($event);" class="centered base-value"/>
       </div>
     </div>
     <div class="children-size">
       <label class="centered">Children size</label>
       <div class="px">
-        <input id="children-size" placeholder="480" ng-focus="clear($event);" ng-model="px" class="centered values"/>
+        <input type="text" placeholder="480" ng-focus="clear($event);" ng-model="px" class="centered values"/>
       </div>
     </div>
     <div>
-      <button id="convert-percent" ng-click="calculatePercent();" class="centered">Convert!</button>
+      <button type="text" ng-click="calculatePercent();" class="centered">Convert!</button>
     </div>
     <div>
-      <input id="percent-result" placeholder="Result" readonly="readonly" ng-model="result" class="centered result"/>
+      <input type="text" placeholder="Result" readonly="readonly" ng-model="result" class="centered result"/>
     </div>
   </form>
-  <form autocomplete="off" data-px-em="data-px-em" ng-controller="emConvertion" class="fluid-math">
+  <form autocomplete="off" ng-controller="emConvertion" class="fluid-math">
     <div>
       <label for="pixel-base" class="centered">Pixel base size</label>
       <div class="px">
-        <input id="pixel-base" placeholder="16" value="16" ng-model="base" ng-focus="clearBase()" class="centered base-value"/>
+        <input type="text" placeholder="16" value="16" ng-model="base" ng-focus="clearBase()" class="centered base-value"/>
       </div>
     </div>
     <div class="cf">
       <div>
         <label class="centered">Px To Em</label>
-        <input id="pixel-value" placeholder="px" ng-model="px" data-convertionType="px-to-em" ng-focus="clear($event); changeConvertionType($event);" class="centered values"/>
+        <input type="text" placeholder="px" ng-model="px" data-convertionType="px-to-em" ng-focus="clear($event); changeConvertionType($event);" class="centered values"/>
       </div>
       <div>
         <label class="centered">Em To Px</label>
-        <input id="em-value" placeholder="em" ng-model="em" data-convertionType="em-to-px" ng-focus="clear($event); changeConvertionType($event);" class="centered values"/>
+        <input type="text" placeholder="em" ng-model="em" data-convertionType="em-to-px" ng-focus="clear($event); changeConvertionType($event);" class="centered values"/>
       </div>
     </div>
     <div>
-      <button id="convert-px" ng-click="pixelConvertion()" class="centered">Convert!</button>
+      <button type="text" ng-click="pixelConvertion()" class="centered">Convert!</button>
     </div>
     <div>
-      <input id="px-result" placeholder="Result" readonly="readonly" ng-model="result" class="centered result"/>
+      <input type="text" placeholder="Result" readonly="readonly" ng-model="result" class="centered result"/>
     </div>
   </form>
 </section>
