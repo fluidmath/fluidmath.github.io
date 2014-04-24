@@ -11,8 +11,15 @@ app.config(function($routeProvider){
 			controller : 'radiusController'
 		})
 		.when('/sprite-cow', {
-			templateUrl : 'views/sprites.html',
-			// controller : 'radiusController'
+			templateUrl : 'views/sprites.html'
+		})
+		.when('/color-convertions', {
+			templateUrl : 'views/color-convertions.html',
+			controller : 'colorController'
+		})
+		.when('/box-shadow', {
+			templateUrl : 'views/box-shadow.html',
+			// controller : 'boxShadowController'
 		})
 		.otherwise({
 			redirectTo : '/math'
@@ -39,7 +46,7 @@ app.controller('emConvertion',function($scope){
 		};
 
 	$scope.clear = function(){ $scope.px = ''; $scope.em = ''; $scope.result = '' };
-	$scope.clearBase = function(){ $scope.base = ''; };
+	$scope.clearBase = function(){ $scope.base = ''; $scope.result = '' };
 	$scope.changeConvertionType = function($event){ convertionType = $event.target.getAttribute('data-convertionType'); }
 	$scope.pixelConvertion = function(){
 		$scope.result = convert[convertionType]();
@@ -98,5 +105,55 @@ app.controller('radiusController',function($scope){
 		}
 
 	}
+
+});
+
+// Color convertions controller
+
+app.controller('colorController',function($scope){
+
+	$scope.opacity = 100;
+
+	var convertionType = 'hex-to-rgba',
+		convertions = {
+			'hex-to-rgba' : function(){
+				var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+			    $scope.hex = $scope.hex.replace(shorthandRegex, function(m, r, g, b) {
+			        return r + r + g + g + b + b;
+			    });
+
+			    var rgba = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec($scope.hex);
+
+			    rgba = rgba ? {
+			        r: parseInt(rgba[1], 16),
+			        g: parseInt(rgba[2], 16),
+			        b: parseInt(rgba[3], 16)
+			    } : null;
+
+			    $scope.result = ( 'rgba('+rgba.r+', '+rgba.g+', '+rgba.b+', '+($scope.opacity/100)+');' );
+
+			},
+			'rgba-to-hex' : function(){
+
+				var rgb = $scope.rgb.replace(/\s/g,'').split(','),
+					red = Number(rgb[0]),
+					green = Number(rgb[1]),
+					blue = Number(rgb[2]),
+					hex = '#' + red.toString(16) +
+					           green.toString(16) +
+					           blue.toString(16);
+
+			    $scope.result = hex;
+
+			}
+		};
+
+	$scope.clear = function(){ $scope.hex = ''; $scope.rgb = ''; $scope.result = ''; };
+
+	$scope.changeConvertionType = function( $event ){
+		convertionType = $event.target.getAttribute('data-convertionType');
+	}
+
+	$scope.convert = function() { convertions[convertionType](); }
 
 });

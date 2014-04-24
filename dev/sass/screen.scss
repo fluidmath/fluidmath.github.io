@@ -49,6 +49,7 @@ body {
 .centered {
 	text-align: center;
 	display: table;
+	width:100%;
 	margin: 0 auto;
 }
 
@@ -228,7 +229,7 @@ form {
 		&:first-of-type {
 			border: none;
 		}
-		input {
+		input:not([type=range]) {
 			@include box-shadow( 0px 0px 5px 0px rgba(160, 160, 160, 0.5) );
 			border: none;
 			font-size: 1.2em;
@@ -321,4 +322,13 @@ section[data-view="radius"] {
 	}
 	
 
+}
+
+section[data-view="color-convertions"] {
+	form {
+		font-size: 1.5em;
+	}
+	.result {
+		height: auto;
+	}
 }

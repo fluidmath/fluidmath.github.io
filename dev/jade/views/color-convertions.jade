@@ -1,0 +1,13 @@
+section(data-view="color-convertions").cf
+	h1 Hex to RGBA
+	form.centered
+		div
+			input( placeholder="#Hex" ng-model="hex" data-convertionType="hex-to-rgba" ng-focus="changeConvertionType($event); clear();" )
+			input( placeholder="Rgb" data-convertionType="rgba-to-hex" ng-model="rgb" ng-focus="changeConvertionType($event); clear();")
+		div
+			label Opacity {{ opacity }} %
+			input( type="range" min="1" max="100" step="1" ng-model="opacity" )
+		div
+			button( ng-click="convert();" ) Convert!
+		div
+			input.result( placeholder="Result" readonly ng-model="result" )
