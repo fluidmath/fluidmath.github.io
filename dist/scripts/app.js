@@ -166,5 +166,28 @@ app.controller('boxShadowController',function($scope){
 	$scope.blur = 32;
 	$scope.opacity = 0.5;
 	$scope.spread = 10;
+	$scope.inset = false;
+
+	$scope.insetValue = '';
+
+	if( $scope.inset ){
+		$scope.insetValue = 'inset ';
+	} else {
+		$scope.insetValue = '';
+	}
+
+	$scope.result = ('box-shadow: ' + $scope.insetValue + $scope.offsetX + 'px ' + $scope.offsetY + 'px ' + $scope.blur + 'px ' + $scope.spread + 'px ' + 'rgba(0,0,0,' + $scope.opacity + ');' );
+
+	$scope.updateResult = function(){
+
+		if( $scope.inset ){
+			$scope.insetValue = 'inset ';
+		} else {
+			$scope.insetValue = '';
+		}		
+
+		$scope.result = ('box-shadow: ' + $scope.insetValue + $scope.offsetX + 'px ' + $scope.offsetY + 'px ' + $scope.blur + 'px ' + $scope.spread + 'px ' + 'rgba(0,0,0,' + $scope.opacity + ');' );	
+
+	}
 
 });
